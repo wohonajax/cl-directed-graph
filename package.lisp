@@ -2,7 +2,6 @@
 
 (defpackage #:cl-directed-graph
   (:use #:cl)
-  (:import-from #:serapeum #:lret)
   (:export #:make-graph
            #:adjacent
            #:neighbors
