@@ -106,18 +106,20 @@ FUNCTION should take 2 arguments: the starting and ending vertices of an edge."
 (defun map-depth-first (function graph)
   "Returns a list of the results of calling FUNCTION on each vertex of GRAPH
 in depth-first traversal order."
-  (lret ((seen (list))
-         (result (list)))
+  (let ((seen (list))
+        (result (list)))
     (labels ((trav (vertex)
                (traverse (trav x))))
-      (map-vertices #'trav graph))))
+      (map-vertices #'trav graph))
+    result))
 
 (defun map-breadth-first (function graph)
   "Returns a list of the results of calling FUNCTION on each vertex of GRAPH
 in breadth-first traversal order."
-  (lret ((seen (list))
-         (result (list)))
+  (let ((seen (list))
+        (result (list)))
     (flet ((trav (vertex)
              (traverse (push x seen)
                        (push (funcall function x) result))))
-      (map-vertices #'trav graph))))
+      (map-vertices #'trav graph))
+    result))

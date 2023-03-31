@@ -1,6 +1,6 @@
 (asdf:defsystem #:cl-directed-graph
   :name "cl-directed-graph"
-  :version "20230216"
+  :version "20230331"
   :author "Hunter Chandler <wohonajax@gmail.com>"
   :license "MIT"
   :description "Directed graph data structure"
